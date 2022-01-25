@@ -20,7 +20,7 @@ showOnPage("<b>Iris Daily Desicions for Work</b>");
 //showOnPage('phoneCall =' + ' ' + phoneCall)
 showOnPage("<b>-----------------Work Day Desicions-------------------<b>");
 
-// Using return Value/Function (Function 1 used)
+// Using return Value/Function (Function 1 used) Added semicolon to code.
 
 let dailyChoice = function (fullTime) {
   let startTime = 8;
