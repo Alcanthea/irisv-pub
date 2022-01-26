@@ -37,7 +37,7 @@ showOnPage(result);
 let emailTime = function (checkEmail) {
   
     if ((checkEmail)) {
-    return `It is ${checkEmail}. Alright time to check on emails. Lets Go! Once done, I will get my lunch. `;
+    return `It is ${checkEmail}. Alright time to check on emails. Lets Go! Once done, I will get my lunch break. `;
   }
 };
 let time = emailTime(10);
