@@ -25,7 +25,7 @@ showOnPage("<b>-----------------Work Day Desicions-------------------<b>");
 let dailyChoice = function (fullTime) {
   let startTime = 8;
 
-  if ((startTime = startTime)) {
+  if ((startTime === startTime)) {
     return `It is ${fullTime} a.m time for work! Remember to relax and not stress about it!`;
   }
 };
@@ -34,11 +34,11 @@ let result = dailyChoice(8);
 showOnPage(result);
 
 // Function 2 Email Check
-let emailTime = function (emails) {
-  let checkEmail = 10;
+let emailTime = function (checkEmail) {
+  
 
-  if ((checkEmail = checkEmail)) {
-    return `It is ${emails}. Alright time to check on emails. Lets Go! Once done, I will get my lunch. `;
+  if ((checkEmail === checkEmail)) {
+    return `It is ${checkEmail}. Alright time to check on emails. Lets Go! Once done, I will get my lunch. `;
   }
 };
 let time = emailTime(10);
