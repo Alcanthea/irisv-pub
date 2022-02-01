@@ -40,15 +40,14 @@ const checkEmail = {
   time: 10,
   totalEmail: 0,
   checkHalf: 0,
-};
-
-const allEmail = function (emails, totalEmail) {
-  emails.totalEmail = emails.totalEmail + totalEmail;
-};
-const halfEmail = function (emails, checkHalf) {
+},                                      
+allEmail = function (emails, totalEmail) {
+emails.totalEmail = emails.totalEmail + totalEmail;
+},
+halfEmail = function (emails, checkHalf) {
   emails.checkHalf = emails.checkHalf + checkHalf;
-};
-const emailsSummary = function (emails) {
+},
+emailsSummary = function (emails) {
   let balance = emails.totalEmail - emails.checkHalf;
   return `${checkEmail.name} it is ${checkEmail.time} a.m you have ${balance} emails left. All in total ${emails.totalEmail} you have checked ${emails.checkHalf}`;
 };
@@ -70,8 +69,8 @@ showOnPage(
 showOnPage("Zoom call is true I will attend work meeting.");
 const isZoom = function (zoomcall) {
   return zoomcall.length > 7 && !zoomcall.includes("zoomcall");
-};
-const isPhoneCall = function (phonecall) {
+},
+isPhoneCall = function (phonecall) {
   return phonecall.length > 9 && !phonecall.includes("phonecall");
 };
 
