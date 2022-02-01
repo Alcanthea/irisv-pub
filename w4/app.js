@@ -32,48 +32,43 @@ const workStart = {
 };
 showOnPage(
   `It is ${workStart.time} a.m. ${workStart.name} is ${workStart.ready} and works in ${workStart.location}.`
+),
+  (lunchBreak = {
+    time: 12,
+    food: "Salad with avocado toast",
+    drink: "Ginger Lemon Iced Tea",
+  });
+showOnPage(
+  `It is ${lunchBreak.time} p.m time for lunch. Today I will have ${lunchBreak.food} and for my drink ${lunchBreak.drink}`
 );
-
 // Use of object refrence to show the total emails I have and how many I have checked to output how many I have left.
 const checkEmail = {
-  name: "Iris",
-  time: 10,
-  totalEmail: 0,
-  checkHalf: 0,
-},                                      
-allEmail = function (emails, totalEmail) {
-emails.totalEmail = emails.totalEmail + totalEmail;
-},
-halfEmail = function (emails, checkHalf) {
-  emails.checkHalf = emails.checkHalf + checkHalf;
-},
-emailsSummary = function (emails) {
-  let balance = emails.totalEmail - emails.checkHalf;
-  return `${checkEmail.name} it is ${checkEmail.time} a.m you have ${balance} emails left. All in total ${emails.totalEmail} you have checked ${emails.checkHalf}`;
-};
+    name: "Iris",
+    time: "time to check emails",
+    totalEmail: 0,
+    checkHalf: 0,
+  },
+  allEmail = function (emails, totalEmail) {
+    emails.totalEmail = emails.totalEmail + totalEmail;
+  },
+  halfEmail = function (emails, checkHalf) {
+    emails.checkHalf = emails.checkHalf + checkHalf;
+  },
+  emailsSummary = function (emails) {
+    let balance = emails.totalEmail - emails.checkHalf;
+    return `${checkEmail.name} it is ${checkEmail.time} you have ${balance} emails left. All in total ${emails.totalEmail} you have checked ${emails.checkHalf}`;
+  },
+  isZoom = function (zoomcall) {
+    return zoomcall.length > 7 && !zoomcall.includes("zoomcall");
+  },
+  isPhoneCall = function (phonecall) {
+    return phonecall.length > 9 && !phonecall.includes("phonecall");
+  };
 allEmail(checkEmail, 60);
 halfEmail(checkEmail, 21);
 showOnPage(emailsSummary(checkEmail));
 
-// Use of object for my lunch break.
-const lunchBreak = {
-  time: 12,
-  food: "Salad with avocado toast",
-  drink: "Ginger Lemon Iced Tea",
-};
-showOnPage(
-  `It is ${lunchBreak.time} p.m time for lunch. Today I will have ${lunchBreak.food} and for my drink ${lunchBreak.drink}`
-);
-
-// Use of object... tracking my zoom meeting or phone call to show true or false.
 showOnPage("Zoom call is true I will attend work meeting.");
-const isZoom = function (zoomcall) {
-  return zoomcall.length > 7 && !zoomcall.includes("zoomcall");
-},
-isPhoneCall = function (phonecall) {
-  return phonecall.length > 9 && !phonecall.includes("phonecall");
-};
-
 showOnPage(isZoom("abc123!@#$%^&")); //True since lettering is greater than zoomcall total count of 7.
 
 showOnPage("Phone Call is false. I will leave call for later.");
