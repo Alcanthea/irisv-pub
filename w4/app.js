@@ -24,14 +24,14 @@ showOnPage("<b>-----------------Work Day Desicions-------------------<b>");
 
 //Week 4 New Code. Object Methods in use.
 // Use of object here. And using const instead of let.
-const workStart = {
+const dailyChoice = {
   time: 8,
   name: "Iris",
   ready: "ready 45 minutes before work starts,",
   location: "Parlier",
 };
 showOnPage(
-  `It is ${workStart.time} a.m. ${workStart.name} is ${workStart.ready} and works in ${workStart.location}.`
+  `It is ${dailyChoice.time} a.m. ${dailyChoice.name} is ${dailyChoice.ready} and works in ${dailyChoice.location}.`
 ),
   (lunchBreak = {
     time: 12,
@@ -41,38 +41,41 @@ showOnPage(
 showOnPage(
   `It is ${lunchBreak.time} p.m time for lunch. Today I will have ${lunchBreak.food} and for my drink ${lunchBreak.drink}`
 );
-// Use of object refrence to show the total emails I have and how many I have checked to output how many I have left.
-const checkEmail = {
-    name: "Iris",
-    time: "time to check emails",
-    totalEmail: 0,
-    checkHalf: 0,
+let allEmail = {
+  name: 'Iris',                       
+  guestCapacity: 75,                      
+  guestCount: 0,
+  emailAvailability: function (email) { 
+     let emailSize = this.guestCapacity - this.guestCount                                         
+      return email >= emailSize                                 
   },
-  allEmail = function (emails, totalEmail) {
-    emails.totalEmail = emails.totalEmail + totalEmail;
+  fullEmail: function (email) {
+      this.guestCount = this.guestCount + email
   },
-  halfEmail = function (emails, checkHalf) {
-    emails.checkHalf = emails.checkHalf + checkHalf;
+  halfEmail: function (email) {
+      this.guestCount = this.guestCount - email
   },
-  emailsSummary = function (emails) {
-    let balance = emails.totalEmail - emails.checkHalf;
-    return `${checkEmail.name} it is ${checkEmail.time} you have ${balance} emails left. All in total ${emails.totalEmail} you have checked ${emails.checkHalf}`;
-  },
-  isZoom = function (zoomcall) {
-    return zoomcall.length > 7 && !zoomcall.includes("zoomcall");
-  },
-  isPhoneCall = function (phonecall) {
-    return phonecall.length > 9 && !phonecall.includes("phonecall");
-  };
-allEmail(checkEmail, 60);
-halfEmail(checkEmail, 21);
-showOnPage(emailsSummary(checkEmail));
+  isZoom : function (zoomcall) {
+      return zoomcall.length > 7 && !zoomcall.includes("zoomcall");
+    },
+    isPhoneCall : function (phonecall) {
+      return phonecall.length > 9 && !phonecall.includes("phonecall");
+        }
+    };
+
+
+allEmail.fullEmail(72)
+showOnPage('If True/False I will only check half of emails.')
+showOnPage(allEmail.emailAvailability(4))
+allEmail.halfEmail(5)
+showOnPage(allEmail.emailAvailability(4))
 
 showOnPage("Zoom call is true I will attend work meeting.");
-showOnPage(isZoom("abc123!@#$%^&")); //True since lettering is greater than zoomcall total count of 7.
+showOnPage(allEmail.isZoom("abc123!@#$%^&")); //True since lettering is greater than zoomcall total count of 7.
 
 showOnPage("Phone Call is false. I will leave call for later.");
-showOnPage(isPhoneCall("123@tHe")); // False since phonecall lettering is not greater than phonecall count of 9.
+showOnPage(allEmail.isPhoneCall("123@tHe")); // False since phonecall lettering is not greater than phonecall count of 9.
+
 
 // Using return Value/Function (Function 1 used) Added semicolon to code.
 
