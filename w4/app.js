@@ -25,6 +25,7 @@ const showOnPage = function (text) {
   //Week 4 Code. Object Method in use.
   // Use of object here. And using const instead of let.
   // Have a Monday to Wednesday work email check.
+  // Code showing how my email checking routine goes in the morning.
   const dailyChoice = {
     emailSize: 0, 
     partOfEmail: 0, 
@@ -44,7 +45,6 @@ const showOnPage = function (text) {
       } else if (totalEmail > 60 && halfEmail < certainEmail) {
         showOnPage('Time is limited I will come back to the emails.');
       } 
-        
     }
   };
   showOnPage(`<br><b>Morning Email Check Monday to Wednesday Daily Choice</b>`)
