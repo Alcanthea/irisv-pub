@@ -28,16 +28,14 @@ const showOnPage = function (text) {
   const dailyChoice = {
     emailSize: 0, 
     partOfEmail: 0, 
-    emailCheck: function (totalEmail, days, halfEmail, certainEmail) {
-    
-      showOnPage(`<b>${days}:</b>`);
+    emailCheck: function (totalEmail, daysOfWeek, halfEmail, certainEmail) {
+      showOnPage(`<b>${daysOfWeek}:</b>`);
       showOnPage(`There is ${totalEmail} to be checked this morning.`);
       showOnPage(`There is ${halfEmail} with importance to reply.`);
       showOnPage(`Only ${certainEmail} will be checked for today.`);
 // If there is to many emails I will mostly only do half of the emails.
       if (totalEmail > 45 && halfEmail >= certainEmail) {
-        //this.emailSize = this.emailSize + partOfEmail;
-        //this.partOfEmail = this.partOfEmail;
+        this.partOfEmail = this.partOfEmail;
         showOnPage(`<b>Only will have time to check half of the emails!</b>`);
 // If a miracle I will have no emails for the day.    
       } else if (totalEmail >= 60 && halfEmail <= certainEmail) {
@@ -53,8 +51,7 @@ const showOnPage = function (text) {
   dailyChoice.emailCheck(59, 'Monday Morning Email Check', 32, 29);
   dailyChoice.emailCheck(38, 'Tuesday Morning Email Check', 11, 22);
   dailyChoice.emailCheck(0, 'Wednesday Morning Email Check', 0, 0);
-  showOnPage(`No emails for today Yay!! Will have a bit of free time ${dailyChoice.emailSize - dailyChoice.partOfEmail} emails in the day.`
-  );
+  showOnPage(`<b>No emails for today Yay!! Will have a bit of free time ${dailyChoice.emailSize - dailyChoice.partOfEmail} emails in the day.</b>`);
   
   
   //let dailyChoice = function (fullTime) {
